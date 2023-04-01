@@ -13,10 +13,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
       options: const FirebaseOptions(
-          apiKey: apiKey,
-          appId: '1:146548645926:android:4102d92335f5efb779c6e7',
-          messagingSenderId: '146548645926',
-          projectId: 'app-do-an-6f3b4'));
+    apiKey: 'AIzaSyClRQiagWbzbtaaUhY1FEhuXs4mb3Omv64',
+    appId: '1:146548645926:android:aaa61cb2c913b08a79c6e7',
+    messagingSenderId: '146548645926',
+    projectId: 'app-do-an-6f3b4',
+  ));
   runApp(const TheMovieApp());
 }
 

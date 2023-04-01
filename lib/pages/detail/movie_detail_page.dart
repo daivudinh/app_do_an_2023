@@ -21,9 +21,9 @@ class MovieDetailPage extends StatelessWidget {
       if (key == null) {
         debugPrint('Video key is null!');
       } else {
-        final url = youtubeUrl + key;
-        if (await canLaunch(url)) {
-          await launch(url);
+        final Uri _url = Uri.parse(youtubeUrl + key);
+        if (await launchUrl(_url)) {
+          await launchUrl(_url);
         }
       }
     }
@@ -110,15 +110,19 @@ class MovieDetailPage extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    constraints: BoxConstraints(
-                                      maxWidth:
-                                          MediaQuery.of(context).size.width *
-                                              0.75,
+                                  Expanded(
+                                    child: Container(
+                                      constraints: BoxConstraints(
+                                        maxWidth:
+                                            MediaQuery.of(context).size.width *
+                                                0.75,
+                                      ),
+                                      // color: Colors.yellow,
+                                      child: Text(
+                                        '${state.movieDetail.title}',
+                                        style: kTextSize28w500White,
+                                      ),
                                     ),
-                                    // color: Colors.yellow,
-                                    child: Text('${state.movieDetail.title}',
-                                        style: kTextSize28w500White),
                                   ),
                                   const SizedBox(width: 10.0),
                                   const DisplayResolution4K(),
